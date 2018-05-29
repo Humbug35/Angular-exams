@@ -4,18 +4,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Componenter && Service upplägg
 1. AppComponent
-⋅⋅1. MainComponent
-⋅⋅⋅⋅1. LoginComponent
-⋅⋅* register()
-⋅⋅* login()
-⋅⋅⋅⋅2. UploadComponent
-⋅⋅⋅⋅3. AccountComponent
-⋅⋅2. NavigationComponent
-2. Another item
-⋅⋅* Unordered sub-list. 
-1. Actual numbers don't matter, just that it's a number
-⋅⋅1. Ordered sub-list
-4. And another item.
+    1. MainComponent
+        1. LoginComponent
+	        * register()
+            * login()
+        2. UploadComponent
+        3. AccountComponent
+    2. NavigationComponent
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
