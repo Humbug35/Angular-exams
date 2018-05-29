@@ -26,11 +26,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 5. FirbaseService
     * firebasConnection()
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## NamingConvention
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* camelCase
+* Namnge bra från början, efter var funktion eller variable gör/innehåller. Gör detta med engång så vi slipper vi göra om det.
 
 ## Build
 
