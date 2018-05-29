@@ -4,24 +4,27 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Componenter && Service upplägg
 1. AppComponent
-    1. MainComponent
-        1. LoginComponent
-	        * register()
-            * login()
-        2. UploadComponent
+    1. LoginComponent
+        * register()
+        * login()
+    2. MainComponent
+        1. UploadComponent
             * files()
-        3. AccountComponent
+        2. AccountComponent
             * setting()
             * signout()
-    2. NavigationComponent
-2. UploadService
+        3. ItemComponent
+            * *ngFor() list-row item of array
+    3. NavigationComponent
+2. HandelLoadService
     * filesUpload()
+    * downLoadFile(file)
 3. DataService
     * getData()
 4. AuthService
     * firebase()
-5. DownloadService
-    * downLoadFile(file)
+5. FirbaseService
+    * connection()
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
