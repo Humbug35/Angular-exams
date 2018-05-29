@@ -9,8 +9,19 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 	        * register()
             * login()
         2. UploadComponent
+            * files()
         3. AccountComponent
+            * setting()
+            * signout()
     2. NavigationComponent
+2. UploadService
+    * filesUpload()
+3. DataService
+    * getData()
+4. AuthService
+    * firebase()
+5. DownloadService
+    * downLoadFile(file)
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
