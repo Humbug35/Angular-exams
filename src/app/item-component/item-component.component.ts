@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -7,17 +8,17 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./item-component.component.css']
 })
 export class ItemComponentComponent implements OnInit {
-  mockedItems = [];
+  items = [];
 
-  constructor(private authService: AuthService) { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.authService.stream.subscribe((items: any) => {
-      this.mockedItems = items;
-      console.log('MainComp', this.mockedItems);
+    this.dataService.stream.subscribe((items: any) => {
+      this.items = items;
+      console.log('MainComp', this.items);
     });
-    this.authService.getMockedItems('/home');
-    console.log('NgonInit', this.mockedItems);
+    this.dataService.getItems('/home');
+    console.log('NgonInit', this.items);
   }
 
 }
