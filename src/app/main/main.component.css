@@ -1,0 +1,77 @@
+.flexy, .flexis, .flexor, .flex-dropleft {
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.flexis {
+    align-items:center;
+    margin:10px 10px 10px 0;
+}
+.flexor {
+    flex-direction: column;
+}
+.flex-dropleft {
+    align-items: center;
+}
+app-navigation {
+    width:20%;
+    margin-right:50px;
+    border-right:1px solid rgb(207, 207, 207);
+}
+.breadcrumb, ol.breadcrumb {
+    padding:0;
+    background-color: transparent;
+    border-radius: 0;
+    color:#222;
+    font-size:20px;
+}
+ol.breadcrumb {
+    margin:0;
+}
+.breadcrumb-item.active {
+    color:#222;
+}
+.search {
+    margin-left:auto;
+}
+@keyframes swing {
+    20% {
+        transform: rotate3d(0, 0, 1, 20deg);
+      }
+      40% {
+        transform: rotate3d(0, 0, 1, -15deg);
+      }
+      60% {
+        transform: rotate3d(0, 0, 1, 10deg);
+      }
+      80% {
+        transform: rotate3d(0, 0, 1, -10deg);
+      }
+      to {
+        transform: rotate3d(0, 0, 1, 0deg);
+      }
+}
+.alert-animation:hover {
+    transform-origin: top center;
+    animation-name: swing;
+    animation-duration: 4s;
+}
+.dropleft .dropdown-toggle::before {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-right: .255em;
+    vertical-align: 0;
+    content: "";
+    border: 0;
+    border-right: 0;
+    border-bottom: 0;
+}
+.dropleft > .far.fa-smile.icon-margin {
+    margin-left:0;
+}
+.dropdown-item {
+    cursor: pointer;
+}

@@ -1,4 +1,35 @@
-<app-navigation></app-navigation>
-<button (click)="logout()">Byt path</button>
-main works!
-<app-item-component></app-item-component>
+<div class="contianer-fluid flexy">
+    <app-navigation></app-navigation>
+    <div class="flexor">
+        <div class="container-fluid flexis">
+            <nav aria-label="breadcrumb">
+                <!-- Will be own component -->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">Home</li>
+                </ol>
+            </nav>
+            <form class="search form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <i class="far fa-bell icon-margin alert-animation"></i>
+            <div class="dropleft">
+                <i class="far fa-smile icon-margin dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div class="flex-dropleft">
+                            <i class="far fa-smile icon-margin"></i>
+                            <h6 class="dropdown-header">username</h6>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <span class="dropdown-item"><em>4.34 GB of 9 GB used</em></span>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Settings</a>
+                    <a class="dropdown-item" href="#">Install</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" (click)="logout()">Sign out</a> 
+                </div>
+            </div>
+        </div>
+        <app-item-component></app-item-component>
+    </div>
+</div>
