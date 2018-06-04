@@ -7,17 +7,10 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  mockedItems = [];
 
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
-    this.authService.stream.subscribe((items: any) => {
-      this.mockedItems = items;
-      console.log('MainComp', this.mockedItems);
-    });
-    this.authService.getMockedItems('/home');
-    console.log('NgonInit', this.mockedItems);
   }
   logout() {
     this.authService.logout();

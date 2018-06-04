@@ -12,6 +12,7 @@ import { DataService } from './data.service';
 import { AuthService } from './auth.service';
 import { FirebaseService } from './firebase.service';
 import { HandleloadService } from './handleload.service';
+import { ItemComponentComponent } from './item-component/item-component.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: MainComponent },
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     MainComponent,
-    NavigationComponent
+    NavigationComponent,
+    ItemComponentComponent
   ],
   imports: [
     BrowserModule,
