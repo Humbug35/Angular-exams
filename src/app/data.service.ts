@@ -15,7 +15,9 @@ export class DataService {
   dbx;
   path = '';
 
-  constructor(private http: HttpClient) {
+
+
+  constructor(private http: HttpClient, route: ActivatedRoute) {
     if (localStorage.getItem('userLoggedIn')) {
       this.token = localStorage.getItem('userLoggedIn');
       console.log(this.token);
@@ -25,29 +27,30 @@ export class DataService {
       this.dbx = new Dropbox({ accessToken: 'hBfKlc457i8AAAAAAAAAfvhDH4N3JkC1xuYS4aj20e2DkxtmrZXiBuqka86427N3' });
   }
 
-
-  getItems(resource): Observable<any> {
+  getItems(path): Observable<any> {
     const options = {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })
     };
+    //this.path = path;
     this.dbx.filesListFolder({path: this.path})
     .then((response) => {
       this.stream.next(response.entries);
     console.log(response.entries);
+    console.log('route dbx: ', path)
     })
     .catch(function(error) {
     console.log(error);
   });
-
-    const itemsArray = this.http.get(resource, options);
+    return this.stream;
+    /*const itemsArray = this.http.get(path, options);
     itemsArray.subscribe((item: any) => {
       this.items = item;
       this.stream.next(this.items);
       console.log('AuthService MockedItems', this.items);
-    });
-    return this.stream;
-  }
+      console.log('resource: ', path);
+    });*/
 
+  }
 }
