@@ -1,14 +1,28 @@
-<div class="form-wrapper">
+<div class="form-wrapper shadow p-3 mb-5 bg-white rounded border border-light">
+  <img src="assets/img/dropbox-icon.png"/>
   <p *ngIf="failedLoggedIn">Failed to login, try again!</p>
-  <form>
+  <!--- <form>
     <div class="form-group">
-      <label>Username: </label>
-      <input name="username" type="text" class="form-control" [(ngModel)]="userInput.username">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">username</div>
+        </div>
+        <input name="username" type="text" class="form-control form-control-lg" [(ngModel)]="userInput.username">
+      </div>
     </div>
     <div class="form-group">
-      <label>Password: </label>
-      <input name="password" type="password" class="form-control" [(ngModel)]="userInput.password">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">password</div>
+        </div>
+        <input name="password" type="password" class="form-control form-control-lg" [(ngModel)]="userInput.password">
+      </div>
     </div>
-    <button (click)="login()">Login</button>
-  </form>
+    <div class="form-group">
+      <button (click)="login()" class="btn btn-outline-primary btn-block float-left">Login</button>
+      <button class="btn btn-primary btn-block float-right">Register</button>
+    </div>
+  </form> -->
+  <button (click)="login()" class="btn btn-outline-primary btn-lg btn-block">Sign in with Dropbox</button>
+  <button class="btn btn-primary btn-block btn-lg">Register</button>
 </div>
