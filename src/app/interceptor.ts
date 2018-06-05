@@ -46,7 +46,7 @@ const entries = [{
 }
 ];
 
-const token = '123';
+const token = 'hBfKlc457i8AAAAAAAAAfe3eaeXKgk4W1e_YXtUJXr9KP3Oq2dFT_iqZjmcAZ1ds';
 
 
 
@@ -99,9 +99,9 @@ export class Interceptor implements HttpInterceptor {
       if(headers.has('Authorization')) {
         if(headers.get('Authorization') === `Bearer ${token}`) {
           console.log('MockedItems from Interceptor', entries);
-          return makeResponse({
+          return makeResponse(
             entries
-          })
+          )
         }
         /*else {
           return makeError(401, 'Unauthorized token')
