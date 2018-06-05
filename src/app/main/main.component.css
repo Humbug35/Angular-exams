@@ -1,15 +1,15 @@
-.flexy, .flexis, .flexor, .flex-dropleft {
+.flex-row, .flex-row-center, .flex-column, .flex-dropleft {
     display: flex;
     flex-basis: 100%;
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
 }
-.flexis {
+.flex-row-center {
     align-items:center;
     margin:10px 10px 10px 0;
 }
-.flexor {
+.flex-column {
     flex-direction: column;
 }
 .flex-dropleft {
@@ -34,6 +34,10 @@ ol.breadcrumb {
     color:#222;
 }
 .search {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-left:auto;
 }
 @keyframes swing {
@@ -74,4 +78,10 @@ ol.breadcrumb {
 }
 .dropdown-item {
     cursor: pointer;
+}
+.dropdown-menu > .dropdown-item:first-of-type em {
+    font-size:12px;
+}
+.flex-row > .container-fluid {
+    padding:0 0;
 }

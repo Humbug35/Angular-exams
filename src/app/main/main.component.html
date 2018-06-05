@@ -1,7 +1,7 @@
-<div class="contianer-fluid flexy">
+<div class="contianer-fluid flex-row">
     <app-navigation></app-navigation>
-    <div class="flexor">
-        <div class="container-fluid flexis">
+    <div class="flex-column">
+        <div class="container-fluid flex-row-center mb-5">
             <nav aria-label="breadcrumb">
                 <!-- Will be own component -->
                 <ol class="breadcrumb">
@@ -9,8 +9,12 @@
                 </ol>
             </nav>
             <form class="search form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-success my-2 my-sm-0 input-group-text" type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
             </form>
             <i class="far fa-bell icon-margin alert-animation"></i>
             <div class="dropleft">
@@ -30,6 +34,22 @@
                 </div>
             </div>
         </div>
-        <app-item-component></app-item-component>
+        <div class="container-fluid flex-row">
+            <div class="row container-fluid">
+                <div class="col-lg-9">
+                    <app-item-component></app-item-component>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <h5 class="card-header bg-primary text-center"><a href="#">Upload</a></h5>
+                        <div class="card-body">
+                            <a href="#" class="card-link">New Shared folder</a>
+                            <a href="#" class="card-link">New folder</a>
+                            <a href="#" class="card-link">Show deleted items</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -14,3 +14,26 @@ body {
     margin: 0 20px;
     font-size:25px;
   }
+  .icon-semi-size {
+    margin:0 5px;
+    font-size:17px;
+  }
+  .icon-sm-size {
+    font-size:14px;
+  }
+  .bg-primary {
+    background-color: #007EE5;    
+  }
+  .card-body {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+.flex-row .card .card-link {
+    margin-left: 0;
+}
+.card-header a, .card-header a:hover {
+  color:white;
+  text-decoration:none;
+}

@@ -1,7 +1,7 @@
 <div class="form-wrapper shadow p-3 mb-5 bg-white rounded border border-light">
   <img src="assets/img/dropbox-icon.png"/>
   <p *ngIf="failedLoggedIn">Failed to login, try again!</p>
-  <form>
+  <!--- <form>
     <div class="form-group">
       <div class="input-group mb-2">
         <div class="input-group-prepend">
@@ -22,5 +22,7 @@
       <button (click)="login()" class="btn btn-outline-primary btn-block float-left">Login</button>
       <button class="btn btn-primary btn-block float-right">Register</button>
     </div>
-  </form>
+  </form> -->
+  <button (click)="login()" class="btn btn-outline-primary btn-lg btn-block">Sign in with Dropbox</button>
+  <button class="btn btn-primary btn-block btn-lg">Register</button>
 </div>
