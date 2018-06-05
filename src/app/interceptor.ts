@@ -99,9 +99,9 @@ export class Interceptor implements HttpInterceptor {
       if(headers.has('Authorization')) {
         if(headers.get('Authorization') === `Bearer ${token}`) {
           console.log('MockedItems from Interceptor', entries);
-          return makeResponse({
+          return makeResponse(
             entries
-          })
+          )
         }
         /*else {
           return makeError(401, 'Unauthorized token')

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
+import {Observable, BehaviorSubject, observable} from 'rxjs';
 import 'isomorphic-fetch';
+import {ActivatedRoute} from '@angular/router';
 
 
 @Injectable({
@@ -12,6 +13,7 @@ export class DataService {
   stream = null;
   token;
   dbx;
+  path = '';
 
   constructor(private http: HttpClient) {
     if (localStorage.getItem('userLoggedIn')) {
@@ -30,13 +32,15 @@ export class DataService {
         'Authorization': `Bearer ${this.token}`
       })
     };
-    this.dbx.filesListFolder({path: ''})
-    .then(function(response) {
-    console.log(response);
+    this.dbx.filesListFolder({path: this.path})
+    .then((response) => {
+      this.stream.next(response.entries);
+    console.log(response.entries);
     })
     .catch(function(error) {
     console.log(error);
   });
+
     const itemsArray = this.http.get(resource, options);
     itemsArray.subscribe((item: any) => {
       this.items = item;
@@ -45,4 +49,5 @@ export class DataService {
     });
     return this.stream;
   }
+
 }

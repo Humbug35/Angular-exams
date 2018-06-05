@@ -15,10 +15,12 @@ export class ItemComponentComponent implements OnInit {
   ngOnInit() {
     this.dataService.stream.subscribe((items: any) => {
       this.items = items;
-      console.log('MainComp', this.items);
+      console.log('Itemcomponent', this.items);
     });
     this.dataService.getItems('/home');
     console.log('NgonInit', this.items);
   }
-
+ /* getSubDirectory() {
+    this.dataService.getItems(this)
+  }*/
 }
