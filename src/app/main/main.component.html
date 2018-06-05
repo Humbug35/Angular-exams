@@ -1,4 +1,55 @@
-<app-navigation></app-navigation>
-<button (click)="logout()">Byt path</button>
-main works!
-<app-item-component></app-item-component>
+<div class="contianer-fluid flex-row">
+    <app-navigation></app-navigation>
+    <div class="flex-column">
+        <div class="container-fluid flex-row-center mb-5">
+            <nav aria-label="breadcrumb">
+                <!-- Will be own component -->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">Home</li>
+                </ol>
+            </nav>
+            <form class="search form-inline my-2 my-lg-0">
+                <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-success my-2 my-sm-0 input-group-text" type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+            <i class="far fa-bell icon-margin alert-animation"></i>
+            <div class="dropleft">
+                <i class="far fa-smile icon-margin dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div class="flex-dropleft">
+                            <i class="far fa-smile icon-margin"></i>
+                            <h6 class="dropdown-header">username</h6>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <span class="dropdown-item"><em>4.34 GB of 9 GB used</em></span>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Settings</a>
+                    <a class="dropdown-item" href="#">Install</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" (click)="logout()">Sign out</a> 
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid flex-row">
+            <div class="row container-fluid">
+                <div class="col-lg-9">
+                    <app-item-component></app-item-component>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <h5 class="card-header bg-primary text-center"><a href="#">Upload</a></h5>
+                        <div class="card-body">
+                            <a href="#" class="card-link">New Shared folder</a>
+                            <a href="#" class="card-link">New folder</a>
+                            <a href="#" class="card-link">Show deleted items</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

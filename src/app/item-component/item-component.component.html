@@ -1,3 +1,18 @@
-<a [routerLink]="" *ngFor="let item of items">
-  {{ item.name  }}
-</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" class="p-4">Name</th>
+      <th scope="col" class="p-4">size</th>
+      <th scope="col" class="p-4">laste modified</th>
+      <th scope="col" class="text-right p-4"><i class="fas fa-bars icon-semi-size"></i><i class="fas fa-caret-down icon-sm-size"></i></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr scope="row" *ngFor="let item of items.entries">
+      <td scope="col" class="p-4">file image {{ item.name  }}</td>
+      <td scope="col" class="p-4">size</td>
+      <td scope="col" class="p-4">date</td>
+      <td scope="col" class="text-right p-4"> <i class="fas fa-ellipsis-v"></i></td>
+    </tr>
+  </tbody>
+</table>
