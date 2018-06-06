@@ -12,7 +12,7 @@ import {observable} from "rxjs/index";
 })
 export class ItemComponentComponent implements OnInit {
   items = [];
-  url;
+
 
   constructor(
     private dataService: DataService,

@@ -33,12 +33,13 @@ export class DataService {
         'Authorization': `Bearer ${this.token}`
       })
     };
+    //this.path = routerLink;
     //this.path = path;
     this.dbx.filesListFolder({path: this.path})
     .then((response) => {
       this.stream.next(response.entries);
     console.log(response.entries);
-    console.log('route dbx: ', path)
+    console.log('route dbx: ', this.path)
     })
     .catch(function(error) {
     console.log(error);
