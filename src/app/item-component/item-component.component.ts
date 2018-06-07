@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { DataService } from '../data.service';
 import { AuthService } from '../auth.service';
@@ -17,19 +17,18 @@ export class ItemComponentComponent implements OnInit {
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute,
-    //private location: Location
+    private router: Router,
               ) {  }
 
 
   ngOnInit() {
+    this.route.url.subscribe(() => {
+      this.dataService.getItems(decodeURI(this.router.url));
+    });
     this.dataService.stream.subscribe((items: any) => {
       this.items = items;
       console.log('Itemcomponent', this.items);
     });
-    this.dataService.getItems('/home');
-    console.log('NgonInit', this.items);
+    this.dataService.getItems('');
   }
- /* getSubDirectory() {
-    this.dataService.getItems(this)
-  }*/
 }

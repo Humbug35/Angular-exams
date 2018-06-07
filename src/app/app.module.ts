@@ -17,7 +17,8 @@ import { ItemComponentComponent } from './item-component/item-component.componen
 const appRoutes: Routes = [
   { path: 'home', component: MainComponent },
   { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' }
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', component:MainComponent }
 ];
 
 @NgModule({
