@@ -18,7 +18,7 @@ const appRoutes: Routes = [
   { path: 'home', component: MainComponent },
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '**', component:MainComponent }
+  { path: '**', component: MainComponent }
 ];
 
 @NgModule({
