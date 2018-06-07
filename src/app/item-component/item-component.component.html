@@ -11,7 +11,8 @@
     <tr scope="row" *ngFor="let item of items">
       <td scope="col" class="p-4">
         <i *ngIf="item['.tag'] === 'folder'" class="fas fa-folder icon-semi-size"></i>
-        <img *ngIf="item.thumb_image"  [src]=sanitizer(item.thumb_image) class="img-thumbnail">
+        <img *ngIf="item.thumb_image"   [src]=sanitizer(item.thumb_image) class="img-thumbnail">
+        <i *ngIf="!item.name.endsWith('jpg') && item['.tag'] !== 'folder'" class="far fa-file icon-semi-size"></i>
         <a [routerLink]="item.path_lower">{{ item.name  }}</a>
       </td>
       <td scope="col" class="p-4">{{ item.size }}</td>
