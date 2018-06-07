@@ -1,22 +1,18 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col" class="p-4">Name</th>
-      <th scope="col" class="p-4">size</th>
-      <th scope="col" class="p-4">laste modified</th>
-      <th scope="col" class="text-right p-4"><i class="fas fa-bars icon-semi-size"></i><i class="fas fa-caret-down icon-sm-size"></i></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr scope="row" *ngFor="let item of items">
-      <td scope="col" class="p-4">
-        <i *ngIf="item['.tag'] === folder" class="fas fa-folder icon-semi-size"></i>
-        <img *ngIf="item['.tag'] === image" src="http://via.placeholder.com/100x100" class="img-thumbnail"> 
-        <a [routerLink]="item.path_lower">{{ item.name  }}</a>
-      </td>
-      <td scope="col" class="p-4">{{ item.size }}</td>
-      <td scope="col" class="p-4">{{ item.client_modified }}</td>
-      <td scope="col" class="text-right p-4"> <i class="fas fa-ellipsis-v"></i></td>
-    </tr>
-  </tbody>
-</table>
+<section class="top-body">
+  <section class="head">
+    <article class="section-listing-head py-4 pl-4">Name</article>
+    <article class="section-listing-head p-y">Size</article>
+    <article class="section-listing-head p-y">Last Modified</article>
+    <article class="section-listing-head py-4 pr-4 text-right"><i class="fas fa-bars icon-semi-size"></i><i class="fas fa-caret-down icon-sm-size"></i></article>
+  </section>
+</section>
+<section class="low-body">
+  <section class="body-listing" *ngFor="let item of items">
+    <article class="section-listing py-4 pl-4"><a [routerLink]="item.path_lower">{{ item.name  }}</a></article>
+    <article class="section-listing py-4" *ngIf="item.size > 0">{{ formatBytes(item.size) }}</article>
+    <article class="section-listing py-4" *ngIf="!item.size">---</article>
+    <article class="section-listing py-4">{{ item.client_modified }}</article>
+    <article class="section-listing py-4 pr-4 text-right"><i class="fas fa-ellipsis-v"></i></article>
+  </section>
+</section>
+

@@ -11,17 +11,10 @@ import {observable} from "rxjs/index";
   styleUrls: ['./item-component.component.css']
 })
 export class ItemComponentComponent implements OnInit {
-  items = [];
+items = [];
+constructor( private dataService: DataService, private route: ActivatedRoute, private router: Router) {}
 
-
-  constructor(
-    private dataService: DataService,
-    private route: ActivatedRoute,
-    private router: Router,
-              ) {  }
-
-
-  ngOnInit() {
+ngOnInit() {
     this.route.url.subscribe(() => {
       this.dataService.getItems(decodeURI(this.router.url));
     });
@@ -31,9 +24,13 @@ export class ItemComponentComponent implements OnInit {
       console.error('user items ', this.items);
     });
   }
-  folderImage() {
-    if(this.items[".tag"] === 'folder') {
-      return  `<i class="fas fa-folder icon-semi-size"></i>`;
-    } else { `img` }
-  }
+
+  formatBytes(bytes,decimals) {
+    if(bytes == 0) return '0 Bytes';
+    var k = 1024,
+        dm = decimals || 2,
+        sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
+        i = Math.floor(Math.log(bytes) / Math.log(k));
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+ }
 }

@@ -1,19 +1,40 @@
-thead, tbody {display:flex;
-  flex-direction: column;
-  width:100%;}
-tr {
+* {
+  box-sizing: border-box;
+}
+section.top-body {
+  width:58%;
+  position:fixed;
+  top:87px;
+  left:20%;
+  background:white;
+}
+section.low-body {
+  width:58%;
+  margin-top:68%;
+  margin-left:20%;
+  display:flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+section.head, section.body-listing {
   width:100%;
+  display:flex;
+  flex-direction:row;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom:2px solid lightgray;
 }
-table tr th:first-of-type {
-  width:55%;
+section.body-listing {
+  border-top:none;
+  border-bottom:none;
 }
-table tr td:first-of-type {
-  width:60%;
+section.head > article.section-listing-head, section.body-listing > article.section-listing {
+  width:20%;
 }
-table tr td:nth-child(3), table tr th:nth-child(3) {
-  width:40%;
+section.head > article.section-listing-head:first-of-type, section.body-listing > article.section-listing:first-of-type {
+  width:50%;
 }
-
-tbody { height: 60vh;
-overflow-y: auto;
-overflow-x: hidden;}
+section.head > article.section-listing-head:last-of-type, section.body-listing > article.section-listing:last-of-type {
+  width:10%;
+}
