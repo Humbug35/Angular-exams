@@ -13,11 +13,10 @@ export class DataService {
   stream = null;
   token;
   dbx;
-  path = '';
 
 
 
-  constructor(private http: HttpClient, route: ActivatedRoute) {
+  constructor(private http: HttpClient, private route: ActivatedRoute) {
     if (localStorage.getItem('userLoggedIn')) {
       this.token = localStorage.getItem('userLoggedIn');
       console.log(this.token);
@@ -28,13 +27,15 @@ export class DataService {
   }
 
   getItems(path): Observable<any> {
+    console.log('path from getItems Param: ', path);
     const options = {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })
     };
+    //this.path = routerLink;
     //this.path = path;
-    this.dbx.filesListFolder({path: this.path})
+    this.dbx.filesListFolder({path: path})
     .then((response) => {
       this.stream.next(response.entries);
     console.log(response.entries);
