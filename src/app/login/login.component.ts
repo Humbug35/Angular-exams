@@ -20,16 +20,8 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.authService.login(this.userInput).subscribe(() => {
-      console.log('Login from logincomp.ts', this.userInput);
-    }, (error) => {
-      console.log('Failed to log in', error);
-      this.failedLoggedIn = true;
-    });
-    this.userInput = {
-      username: '',
-      password: ''
-    };
+    const authURL = "https://www.dropbox.com/oauth2/authorize?response_type=token&client_id=nyfmqnlf5r5ndgz&redirect_uri=http://localhost:4200/home";
+    return window.location.href = authURL;
   }
 
   /*logout() {
