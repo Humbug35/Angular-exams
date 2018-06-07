@@ -21,12 +21,9 @@ export class LoginComponent implements OnInit {
     this.activateRoute.url.subscribe(() => {
       const responsUrl = this.router.url;
       if(responsUrl.indexOf('&') !== -1) {
-      const params = responsUrl.split('&')
-      console.error('token now', params);
+      const params = responsUrl.split('&');
       const authToken = params[0].split('=');
-      console.error('token now', authToken);
-      const myToken = authToken[1]
-      console.error('mytoken ', myToken)
+      const myToken = authToken[1];
 
       localStorage.setItem('token', myToken);
       this.router.navigate(['/home'])
