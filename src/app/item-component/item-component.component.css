@@ -1,0 +1,19 @@
+thead, tbody {display:flex;
+  flex-direction: column;
+  width:100%;}
+tr {
+  width:100%;
+}
+table tr th:first-of-type {
+  width:55%;
+}
+table tr td:first-of-type {
+  width:60%;
+}
+table tr td:nth-child(3), table tr th:nth-child(3) {
+  width:40%;
+}
+
+tbody { height: 60vh;
+overflow-y: auto;
+overflow-x: hidden;}

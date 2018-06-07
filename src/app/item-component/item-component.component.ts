@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { DataService } from '../data.service';
 import { AuthService } from '../auth.service';
@@ -12,16 +12,19 @@ import {observable} from "rxjs/index";
 })
 export class ItemComponentComponent implements OnInit {
   items = [];
-  url;
+
 
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute,
-    //private location: Location
+    private router: Router,
               ) {  }
 
 
   ngOnInit() {
+    this.route.url.subscribe(() => {
+      this.dataService.getItems(decodeURI(this.router.url));
+    });
     this.dataService.stream.subscribe((items: any) => {
       console.error('items ', items);
       this.items = items;
@@ -34,7 +37,4 @@ export class ItemComponentComponent implements OnInit {
       return  `<i class="fas fa-folder icon-semi-size"></i>`;
     } else { `img` }
   }
- /* getSubDirectory() {
-    this.dataService.getItems(this)
-  }*/
 }
