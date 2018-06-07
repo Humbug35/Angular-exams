@@ -45,8 +45,8 @@ const entries = [{
   "id": "id:SXxm3pB30rMAAAAAAAAEvw"
 }
 ];
-
-const token = 'hBfKlc457i8AAAAAAAAAfe3eaeXKgk4W1e_YXtUJXr9KP3Oq2dFT_iqZjmcAZ1ds';
+const getToken = localStorage.getItem('token');
+const token = getToken;
 
 
 
