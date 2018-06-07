@@ -10,8 +10,8 @@
   <tbody>
     <tr scope="row" *ngFor="let item of items">
       <td scope="col" class="p-4">
-        <i *ngIf="item['.tag'] === folder" class="fas fa-folder icon-semi-size"></i>
-        <img *ngIf="item['.tag'] === image" src="http://via.placeholder.com/100x100" class="img-thumbnail"> 
+        <i *ngIf="item['.tag'] === 'folder'" class="fas fa-folder icon-semi-size"></i>
+        <img *ngIf="item.thumb_image"  [src]=sanitizer(item.thumb_image) class="img-thumbnail">
         <a [routerLink]="item.path_lower">{{ item.name  }}</a>
       </td>
       <td scope="col" class="p-4">{{ item.size }}</td>
@@ -20,3 +20,6 @@
     </tr>
   </tbody>
 </table>
+<!--
+http://via.placeholder.com/100x100-->
+<!--*ngIf="item['.tag'] === 'file' &&-->
