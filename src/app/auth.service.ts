@@ -19,7 +19,7 @@ export class AuthService {
     }
   }
 
-  login(userInput) {
+  /*login(userInput) {
     console.log('Data from authservice', userInput);
     const ob = this.http.post('/login', userInput);
     ob.subscribe((item: any) => {
@@ -28,10 +28,10 @@ export class AuthService {
       this.router.navigate(['/home']);
     });
     return ob;
-  }
+  }*/
 
   logout() {
-    localStorage.removeItem('userLoggedIn');
+    localStorage.clear();
     this.router.navigate(['/login']);
   }
 }

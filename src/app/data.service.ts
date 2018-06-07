@@ -14,16 +14,13 @@ export class DataService {
   token;
   dbx;
 
-
-
-  constructor(private http: HttpClient, private route: ActivatedRoute) {
-    if (localStorage.getItem('userLoggedIn')) {
-      this.token = localStorage.getItem('userLoggedIn');
-      console.log(this.token);
+  constructor(private http: HttpClient, route: ActivatedRoute) {
+    if (localStorage.getItem('token')) {
+      this.token = localStorage.getItem('token');
     }
     this.stream = new BehaviorSubject(this.items);
       let Dropbox = require('dropbox').Dropbox;
-      this.dbx = new Dropbox({ accessToken: 'hBfKlc457i8AAAAAAAAAfvhDH4N3JkC1xuYS4aj20e2DkxtmrZXiBuqka86427N3' });
+      this.dbx = new Dropbox({ accessToken: this.token });
   }
 
   getItems(path): Observable<any> {

@@ -8,13 +8,15 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of items">
-      <td class="p-4">file image
+    <tr scope="row" *ngFor="let item of items">
+      <td scope="col" class="p-4">
+        <i *ngIf="item['.tag'] === folder" class="fas fa-folder icon-semi-size"></i>
+        <img *ngIf="item['.tag'] === image" src="http://via.placeholder.com/100x100" class="img-thumbnail"> 
         <a [routerLink]="item.path_lower">{{ item.name  }}</a>
       </td>
-      <td class="p-4">size</td>
-      <td class="p-4">date</td>
-      <td class="text-right p-4"> <i class="fas fa-ellipsis-v"></i></td>
+      <td scope="col" class="p-4">{{ item.size }}</td>
+      <td scope="col" class="p-4">{{ item.client_modified }}</td>
+      <td scope="col" class="text-right p-4"> <i class="fas fa-ellipsis-v"></i></td>
     </tr>
   </tbody>
 </table>

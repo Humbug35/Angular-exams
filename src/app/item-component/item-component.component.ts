@@ -26,9 +26,15 @@ export class ItemComponentComponent implements OnInit {
       this.dataService.getItems(decodeURI(this.router.url));
     });
     this.dataService.stream.subscribe((items: any) => {
+      console.error('items ', items);
       this.items = items;
-      console.log('Itemcomponent', this.items);
+      console.error('user items ', this.items);
     });
-    this.dataService.getItems('');
+    this.dataService.getItems('/home');
+  }
+  folderImage() {
+    if(this.items[".tag"] === 'folder') {
+      return  `<i class="fas fa-folder icon-semi-size"></i>`;
+    } else { `img` }
   }
 }
