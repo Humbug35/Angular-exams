@@ -8,15 +8,8 @@ import { ActivatedRoute, Router, CanActivate } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  userInput = {
-    username: '',
-    password: ''
-  };
-  failedLoggedIn = false;
-
   constructor(private authService: AuthService, private router: Router, private activateRoute: ActivatedRoute) { }
-
+  
   ngOnInit() {
     this.activateRoute.url.subscribe(() => {
       const responsUrl = this.router.url;
@@ -26,10 +19,11 @@ export class LoginComponent implements OnInit {
       const myToken = authToken[1];
 
       localStorage.setItem('token', myToken);
+      console.log('mytoken ', myToken);
       this.router.navigate(['/home'])
 
       } else { this.router.navigate(['/login']) }
-    })
+    });
   }
 
   login() {

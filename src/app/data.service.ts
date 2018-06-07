@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import {Observable, BehaviorSubject, observable} from 'rxjs';
+import { Observable, BehaviorSubject, observable } from 'rxjs';
 import 'isomorphic-fetch';
-import {ActivatedRoute} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Injectable({
@@ -24,14 +24,11 @@ export class DataService {
   }
 
   getItems(path): Observable<any> {
-    console.log('path from getItems Param: ', path);
     const options = {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })
     };
-    //this.path = routerLink;
-    //this.path = path;
     this.dbx.filesListFolder({path: path})
     .then((response) => {
       this.stream.next(response.entries);
@@ -42,13 +39,5 @@ export class DataService {
     console.log(error);
   });
     return this.stream;
-    /*const itemsArray = this.http.get(path, options);
-    itemsArray.subscribe((item: any) => {
-      this.items = item;
-      this.stream.next(this.items);
-      console.log('AuthService MockedItems', this.items);
-      console.log('resource: ', path);
-    });*/
-
   }
 }
