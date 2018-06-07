@@ -24,11 +24,15 @@ export class DataService {
   }
 
   getItems(path): Observable<any> {
+    if (path === "/") {
+      path = "";
+    }
     const options = {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })
     };
+    console.error('log path', path)
     this.dbx.filesListFolder({path: path})
     .then((response) => {
       this.stream.next(response.entries);

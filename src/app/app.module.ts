@@ -15,9 +15,8 @@ import { HandleloadService } from './handleload.service';
 import { ItemComponentComponent } from './item-component/item-component.component';
 
 const appRoutes: Routes = [
-  { path: 'home', component: MainComponent },
+  { path: '', component: MainComponent },
   { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: MainComponent }
 ];
 
@@ -36,10 +35,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    { provide:
-    HTTP_INTERCEPTORS,
-      useClass: Interceptor,
-      multi: true },
+
     DataService,
     AuthService,
     FirebaseService,

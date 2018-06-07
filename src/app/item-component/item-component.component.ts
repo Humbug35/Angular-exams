@@ -30,7 +30,6 @@ export class ItemComponentComponent implements OnInit {
       this.items = items;
       console.error('user items ', this.items);
     });
-    this.dataService.getItems('/home');
   }
   folderImage() {
     if(this.items[".tag"] === 'folder') {
