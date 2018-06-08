@@ -1,19 +1,46 @@
-thead, tbody {display:flex;
-  flex-direction: column;
-  width:100%;}
-tr {
+* {
+  box-sizing: border-box;
+}
+section.top-body {
+  width:58%;
+  position:fixed;
+  top:87px;
+  left:20%;
+  z-index:40;
+  background:white;
+}
+.set {
+  width:58%;
+  position:absolute;
+  top:20%;
+  left:20%;
+  z-index:10;
+}
+section.low-body {
   width:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
-table tr th:first-of-type {
-  width:55%;
+section.head, section.body-listing {
+  width:100%;
+  display:flex;
+  flex-direction:row;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom:2px solid lightgray;
 }
-table tr td:first-of-type {
-  width:60%;
+section.body-listing {
+  border-top:none;
+  border-bottom:none;
 }
-table tr td:nth-child(3), table tr th:nth-child(3) {
-  width:40%;
+section.head > article.section-listing-head, section.body-listing > article.section-listing {
+  width:20%;
 }
-
-tbody { height: 60vh;
-overflow-y: auto;
-overflow-x: hidden;}
+section.head > article.section-listing-head:first-of-type, section.body-listing > article.section-listing:first-of-type {
+  width:50%;
+}
+section.head > article.section-listing-head:last-of-type, section.body-listing > article.section-listing:last-of-type {
+  width:10%;
+}
