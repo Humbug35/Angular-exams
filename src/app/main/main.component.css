@@ -19,6 +19,7 @@ app-item-component {
     position:fixed;
     top:0;
     right:0;
+    z-index:40;
     box-sizing:border-box;
     border-bottom:1px solid rgb(207, 207, 207);
     background:white;
