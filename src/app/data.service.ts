@@ -32,7 +32,7 @@ export class DataService {
         'Authorization': `Bearer ${this.token}`
       })
     };
-    console.error('log path', path)
+    console.error('log path', path);
     this.dbx.filesListFolder({path: path})
     .then((response) => {
       this.stream.next(response.entries);
