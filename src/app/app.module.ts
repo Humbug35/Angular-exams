@@ -13,6 +13,7 @@ import { AuthService } from './auth.service';
 import { FirebaseService } from './firebase.service';
 import { HandleloadService } from './handleload.service';
 import { ItemComponentComponent } from './item-component/item-component.component';
+import { NgSrcModule } from 'ng-src';
 
 const appRoutes: Routes = [
   { path: '', component: MainComponent },
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    NgSrcModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [

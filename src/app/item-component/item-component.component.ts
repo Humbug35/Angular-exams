@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 import { DataService } from '../data.service';
 import { AuthService } from '../auth.service';
 import {observable} from "rxjs/index";
+import { DomSanitizer } from "@angular/platform-browser";
 
 @Component({
   selector: 'app-item-component',
@@ -18,6 +19,7 @@ export class ItemComponentComponent implements OnInit {
     private dataService: DataService,
     private route: ActivatedRoute,
     private router: Router,
+    private domSanitizer: DomSanitizer
               ) {  }
 
 
@@ -35,5 +37,8 @@ export class ItemComponentComponent implements OnInit {
     if(this.items[".tag"] === 'folder') {
       return  `<i class="fas fa-folder icon-semi-size"></i>`;
     } else { `img` }
+  }
+  sanitizer(url: string) {
+    return this.domSanitizer.bypassSecurityTrustUrl(url);
   }
 }
