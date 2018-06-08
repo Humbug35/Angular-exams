@@ -38,9 +38,19 @@ section.body-listing {
 section.head > article.section-listing-head, section.body-listing > article.section-listing {
   width:20%;
 }
-section.head > article.section-listing-head:first-of-type, section.body-listing > article.section-listing:first-of-type {
+section.head > article.section-listing-head:first-of-type {
   width:50%;
+}
+section.body-listing > article.section-listing:first-of-type {
+  width:13%;
+}
+section.body-listing > article.section-listing:nth-child(2) {
+  width:37%;
 }
 section.head > article.section-listing-head:last-of-type, section.body-listing > article.section-listing:last-of-type {
   width:10%;
+}
+span {
+  padding:0;
+  margin:0;
 }
