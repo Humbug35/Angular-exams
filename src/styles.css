@@ -27,6 +27,10 @@ body {
   .icon-sm-size {
     font-size:14px;
   }
+  .icon-big {
+    font-size:50px;
+    color:lightgray;
+  }
   .bg-primary {
     background-color: #007EE5;    
   }

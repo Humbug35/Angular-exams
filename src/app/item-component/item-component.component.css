@@ -43,6 +43,8 @@ section.head > article.section-listing-head:first-of-type {
 }
 section.body-listing > article.section-listing:first-of-type {
   width:13%;
+  display:flex;
+  justify-content: center;
 }
 section.body-listing > article.section-listing:nth-child(2) {
   width:37%;
