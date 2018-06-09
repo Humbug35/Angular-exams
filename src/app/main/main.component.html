@@ -36,7 +36,7 @@
     </article>
 </section>
 <div class="card" style="width: 18rem;">
-    <h5 class="card-header bg-primary text-center"><a href="#" (click)="makeUploadVisible()">Upload</a></h5>
+    <h5 class="card-header bg-primary text-center"><a href="javascript:!window.location.reload" (click)="makeUploadVisible()">Upload</a></h5>
     <div *ngIf="showUpLoadDiv">
       <input type="file" (change)="upLoadFile($event)">
       <button (click)="closeUploadDiv()">Close</button>

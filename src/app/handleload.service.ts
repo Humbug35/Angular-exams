@@ -10,11 +10,10 @@ export class HandleloadService {
   constructor(private dataService: DataService) { }
 
   upLoadFile(event) {
-    console.log('Kommer vi hit?');
     this.fileList = event.target.files;
-    console.log('Hit då?');
+    console.log('FileList: ', this.fileList);
     const file = this.fileList[0];
-    console.log('Hoppas vi kommer hit');
+    console.log('File: ', file);
     this.dataService.dbx.filesUpload({ path: '/' + file.name, contents: file })
       .then((theFile) => {
         console.log('Filen: ', theFile);
