@@ -32,7 +32,7 @@ export class BreadcrumbComponent implements OnInit {
   getPath(path){
     const index = this.paths.indexOf(path);
     const a = this.paths.slice(0, index+1).reduce((a, b) =>  `${a}/${b}`, '');
-    return a;
+    return decodeURI(a);
   }
 
 }

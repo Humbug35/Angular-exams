@@ -16,16 +16,16 @@ export class UploadComponent implements OnInit {
 
   upLoadFile(event) {
     let results = document.getElementById('file-progress');
-    let url = this.router.url;
+    let url = decodeURI(this.router.url);
+    if (url === "/") { url = ""; }
     this.fileList = event.target.files;
     const file = this.fileList[0];
-    const urlPath = this.router.url + '/' + file.name;
+    const urlPath = url + '/' + file.name;
     results.classList.add('loading');
     results.innerHTML = 'Upload in progress...';
-    if (url === "/") { url = ""; }
     this.dataService.dbx.filesUpload({ path: urlPath, contents: file })
       .then((theFile) => {
-        this.dataService.getItems(this.router.url);
+        this.dataService.getItems(url);
         results.classList.remove('loading');
         results.classList.add('success');
         results.innerHTML = 'File Uploaded!';
