@@ -34,7 +34,6 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    NgSrcModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
