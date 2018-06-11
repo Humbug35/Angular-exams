@@ -13,7 +13,7 @@
         <i class="far fa-bell icon-margin alert-animation"></i>
         <div class="dropleft">
             <i class="far fa-smile icon-margin dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">                        
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <div class="flex-column flex-dropleft">
                     <div class="flex-row-center">
                         <i class="far fa-smile icon-margin"></i>
@@ -32,7 +32,8 @@
     </article>
 </section>
 <div class="card" style="width: 18rem;">
-    <h5 class="card-header bg-primary text-center"><a href="#">Upload</a></h5>
+    <input type="file" id="file" (change)="upLoadFile($event)" class="card-header bg-primary text-center inputfile"/>
+    <label for="file">Upload</label>
     <div class="card-body">
         <a href="#" class="card-link">New Shared folder</a>
         <a href="#" class="card-link">New folder</a>
