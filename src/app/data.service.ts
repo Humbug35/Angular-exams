@@ -24,7 +24,6 @@ export class DataService {
   }
 
   getImages(path): any {
-    console.log('Path dataservice ', path);
     return this.dbx.filesGetThumbnail({path: decodeURI(path)});
 
   }
@@ -45,7 +44,6 @@ export class DataService {
           this.getImages(val.path_lower).then((imgResp) => {
             val.thumb_image = URL.createObjectURL(imgResp.fileBlob);
             this.stream.next(response.entries);
-            console.log(response.entries);
           });
         }
       });
