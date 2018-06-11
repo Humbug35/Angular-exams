@@ -14,7 +14,7 @@ export class DataService {
   token;
   dbx;
 
-  constructor(private http: HttpClient, route: ActivatedRoute) {
+  constructor(private http: HttpClient) {
     if (localStorage.getItem('token')) {
       this.token = localStorage.getItem('token');
     }
@@ -38,7 +38,6 @@ export class DataService {
         'Authorization': `Bearer ${this.token}`
       })
     };
-    console.error('log path', path);
     this.dbx.filesListFolder({path: path})
     .then((response) => {
       response.entries.forEach((val) => {
@@ -51,11 +50,9 @@ export class DataService {
         }
       });
       this.stream.next(response.entries);
-    console.log(response.entries);
-    console.log('route dbx: ', path);
     })
     .catch(function(error) {
-    console.log(error);
+      console.error(error);
   });
     return this.stream;
   }

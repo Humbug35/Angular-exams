@@ -20,9 +20,7 @@ ngOnInit() {
       this.dataService.getItems(decodeURI(this.router.url));
     });
     this.dataService.stream.subscribe((items: any) => {
-      console.error('items ', items);
       this.items = items;
-      console.error('user items ', this.items);
     });
  }
  formatBytes(bytes,decimals) {
