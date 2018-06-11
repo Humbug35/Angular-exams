@@ -1,13 +1,14 @@
-import { Injectable, OnInit } from '@angular/core';
-import { HttpClient, HttpResponse, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { Observable, BehaviorSubject, observable } from 'rxjs';
 import 'isomorphic-fetch';
 import {ActivatedRoute, Data, Router} from '@angular/router';
 
-@Injectable({
-  providedIn: 'root'
+@Component({
+  selector: 'app-breadcrumb',
+  templateUrl: './breadcrumb.component.html',
+  styleUrls: ['./breadcrumb.component.css']
 })
-export class BreadcrumbService implements OnInit {
+export class BreadcrumbComponent implements OnInit {
   paths = []
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
@@ -31,7 +32,9 @@ export class BreadcrumbService implements OnInit {
   getPath(path){
     const index = this.paths.indexOf(path);
     const a = this.paths.slice(0, index+1).reduce((a, b) =>  `${a}/${b}`, '');
+    
+    console.error('path content: ', a)
     return a;
   }
-}
 
+}

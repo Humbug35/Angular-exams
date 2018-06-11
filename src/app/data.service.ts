@@ -3,7 +3,6 @@ import { HttpClient, HttpResponse, HttpErrorResponse, HttpHeaders } from '@angul
 import { Observable, BehaviorSubject, observable } from 'rxjs';
 import 'isomorphic-fetch';
 import { ActivatedRoute } from '@angular/router';
-import { BreadcrumbService } from './breadcrumb.service';
 
 
 @Injectable({
@@ -15,7 +14,7 @@ export class DataService {
   token;
   dbx;
 
-  constructor(private http: HttpClient, route: ActivatedRoute, private breadCrumb: BreadcrumbService) {
+  constructor(private http: HttpClient) {
     if (localStorage.getItem('token')) {
       this.token = localStorage.getItem('token');
     }
@@ -32,16 +31,12 @@ export class DataService {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })
-    };
-    console.error('log path', path);
-    this.dbx.filesListFolder({path: path})
+    };this.dbx.filesListFolder({path: path})
     .then((response) => {
       this.stream.next(response.entries);
-    console.log(response.entries);
-    console.log('route dbx: ', path)
     })
     .catch(function(error) {
-    console.log(error);
+      console.error(error);
   });
     return this.stream;
   }

@@ -20,19 +20,7 @@ app-navigation {
     margin-right:50px;
     border-right:1px solid rgb(207, 207, 207);
 }
-.breadcrumb, ol.breadcrumb {
-    padding:0;
-    background-color: transparent;
-    border-radius: 0;
-    color:#222;
-    font-size:20px;
-}
-ol.breadcrumb {
-    margin:0;
-}
-.breadcrumb-item.active {
-    color:#222;
-}
+
 .search {
     display:flex;
     flex-direction: column;

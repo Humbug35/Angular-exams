@@ -2,14 +2,7 @@
     <app-navigation></app-navigation>
     <div class="flex-column">
         <div class="container-fluid flex-row-center mb-5">
-            <nav aria-label="breadcrumb">
-                <!-- Will be own component -->
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item active" aria-current="page" *ngFor="let crumb of breadCrumbs">
-                      <a [routerLink]="url"> <!--(click)="goBack(crumb)"-->{{crumb}}</a>
-                    </li>
-                </ol>
-            </nav>
+            <app-breadcrumb></app-breadcrumb>
             <form class="search form-inline my-2 my-lg-0">
                 <div class="input-group">
                         <input class="form-control" type="search" placeholder="Search" aria-label="Search">
