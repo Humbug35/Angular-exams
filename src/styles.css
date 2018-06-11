@@ -1,6 +1,12 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 /* You can add global styles to this file, and also import other style files */
-
+app-root {
+  width:100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 body {
     height:100vh;
     margin:0;
@@ -20,6 +26,10 @@ body {
   }
   .icon-sm-size {
     font-size:14px;
+  }
+  .icon-big {
+    font-size:50px;
+    color:lightgray;
   }
   .bg-primary {
     background-color: #007EE5;    

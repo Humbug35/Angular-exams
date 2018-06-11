@@ -23,6 +23,12 @@ export class DataService {
       this.dbx = new Dropbox({ accessToken: this.token });
   }
 
+  getImages(path): any {
+    console.log('Path dataservice ', path);
+    return this.dbx.filesGetThumbnail({path: decodeURI(path)});
+
+  }
+
   getItems(path): Observable<any> {
     if (path === "/") {
       path = "";
@@ -31,8 +37,18 @@ export class DataService {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })
-    };this.dbx.filesListFolder({path: path})
+    };
+    this.dbx.filesListFolder({path: path})
     .then((response) => {
+      response.entries.forEach((val) => {
+        if (val.path_lower.endsWith("jpg") || val.path_lower.endsWith("png")) {
+          this.getImages(val.path_lower).then((imgResp) => {
+            val.thumb_image = URL.createObjectURL(imgResp.fileBlob);
+            this.stream.next(response.entries);
+            console.log(response.entries);
+          });
+        }
+      });
       this.stream.next(response.entries);
     })
     .catch(function(error) {

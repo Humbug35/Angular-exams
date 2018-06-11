@@ -1,3 +1,29 @@
+app-navigation {
+    width:20%;
+    height:100vh;
+    position:fixed;
+    left:0;
+    top:0;
+    border-right:1px solid rgb(207, 207, 207);
+    background:rgb(230, 229, 229);
+}
+app-item-component {
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.main-top-menu {
+    width:80%;
+    position:fixed;
+    top:0;
+    right:0;
+    z-index:40;
+    box-sizing:border-box;
+    border-bottom:1px solid rgb(207, 207, 207);
+    background:white;
+}
 .flex-row, .flex-row-center, .flex-column, .flex-dropleft {
     display: flex;
     flex-basis: 100%;
@@ -7,7 +33,6 @@
 }
 .flex-row-center {
     align-items:center;
-    margin:10px 10px 10px 0;
 }
 .flex-column {
     flex-direction: column;
@@ -20,7 +45,6 @@ app-navigation {
     margin-right:50px;
     border-right:1px solid rgb(207, 207, 207);
 }
-
 .search {
     display:flex;
     flex-direction: column;
@@ -28,22 +52,26 @@ app-navigation {
     align-items: center;
     margin-left:auto;
 }
+.search {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left:auto;
+}
+.form-control {
+    border-radius: .95rem;
+}
+.input-group>.input-group-append>.btn, .input-group>.input-group-append>.input-group-text, .input-group>.input-group-prepend:first-child>.btn:not(:first-child), .input-group>.input-group-prepend:first-child>.input-group-text:not(:first-child), .input-group>.input-group-prepend:not(:first-child)>.btn, .input-group>.input-group-prepend:not(:first-child)>.input-group-text {
+    border-top-right-radius: .95rem;
+    border-bottom-right-radius: .95rem;
+}
 @keyframes swing {
-    20% {
-        transform: rotate3d(0, 0, 1, 20deg);
-      }
-      40% {
-        transform: rotate3d(0, 0, 1, -15deg);
-      }
-      60% {
-        transform: rotate3d(0, 0, 1, 10deg);
-      }
-      80% {
-        transform: rotate3d(0, 0, 1, -10deg);
-      }
-      to {
-        transform: rotate3d(0, 0, 1, 0deg);
-      }
+    20% { transform: rotate3d(0, 0, 1, 20deg); }
+    40% { transform: rotate3d(0, 0, 1, -15deg); }
+    60% { transform: rotate3d(0, 0, 1, 10deg); }
+    80% { transform: rotate3d(0, 0, 1, -10deg); }
+    to { transform: rotate3d(0, 0, 1, 0deg); }
 }
 .alert-animation:hover {
     transform-origin: top center;
@@ -67,9 +95,15 @@ app-navigation {
 .dropdown-item {
     cursor: pointer;
 }
-.dropdown-menu > .dropdown-item:first-of-type em {
+.dropdown-menu em {
     font-size:12px;
 }
-.flex-row > .container-fluid {
-    padding:0 0;
+.card {
+    position:fixed;
+    right:10px;
+    top:100px;
+}
+.card a {
+    margin-left:0;
+    padding-left:0;
 }

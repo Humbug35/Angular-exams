@@ -13,7 +13,6 @@ import { AuthService } from './auth.service';
 import { FirebaseService } from './firebase.service';
 import { HandleloadService } from './handleload.service';
 import { ItemComponentComponent } from './item-component/item-component.component';
-import { BreadcrumbService } from './breadcrumb.service';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 const appRoutes: Routes = [
@@ -35,10 +34,10 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    NgSrcModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    BreadcrumbService,
     DataService,
     AuthService,
     FirebaseService,
