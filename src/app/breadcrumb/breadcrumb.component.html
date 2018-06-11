@@ -1,0 +1,8 @@
+<nav aria-label="breadcrumb">
+  <!-- Will be own component -->
+  <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page" *ngFor="let path of paths">
+        <a [routerLink]="getPath(path)">{{getPathName(path) + ''}}</a>
+      </li>
+  </ol>
+</nav>

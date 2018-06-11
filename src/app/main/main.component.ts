@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { HandleloadService } from '../handleload.service';
+import { Observable } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DataService } from '../data.service';
+import { Stream } from 'stream';
 
 @Component({
   selector: 'app-main',
@@ -8,26 +12,13 @@ import { HandleloadService } from '../handleload.service';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  showUpLoadDiv = false;
-
-  constructor(private authService: AuthService, private handleLoadService: HandleloadService) { }
-
-  ngOnInit() {
-  }
-
-  makeUploadVisible() {
-    this.showUpLoadDiv = true;
-  }
-
-  closeUploadDiv() {
-    this.showUpLoadDiv = false;
-  }
+constructor(private authService: AuthService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  ngOnInit() {}
 
   upLoadFile(event) {
-    this.handleLoadService.upLoadFile(event);
+      this.handleLoadService.upLoadFile(event);
   }
-
   logout() {
-    this.authService.logout();
+      this.authService.logout();
   }
 }
