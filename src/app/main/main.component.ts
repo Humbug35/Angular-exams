@@ -12,12 +12,10 @@ import { Stream } from 'stream';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-constructor(private authService: AuthService, private activatedRoute: ActivatedRoute, private router: Router, private handleLoadService: HandleloadService) { }
-  ngOnInit() {}
+  
+  constructor(private authService: AuthService, private activatedRoute: ActivatedRoute, private router: Router, private handleLoadService: HandleloadService) { }
 
-  upLoadFile(event) {
-      this.handleLoadService.upLoadFile(event);
-  }
+  ngOnInit() {}
   logout() {
       this.authService.logout();
   }

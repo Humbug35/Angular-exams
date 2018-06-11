@@ -31,13 +31,5 @@
         </div>
     </article>
 </section>
-<div class="card" style="width: 18rem;">
-    <input type="file" id="file" (change)="upLoadFile($event)" class="card-header bg-primary text-center inputfile"/>
-    <label for="file">Upload</label>
-    <div class="card-body">
-        <a href="#" class="card-link">New Shared folder</a>
-        <a href="#" class="card-link">New folder</a>
-        <a href="#" class="card-link">Show deleted items</a>
-    </div>
-</div>
+<app-upload></app-upload>
 <app-item-component></app-item-component>

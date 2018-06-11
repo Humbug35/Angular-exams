@@ -14,6 +14,7 @@ import { FirebaseService } from './firebase.service';
 import { HandleloadService } from './handleload.service';
 import { ItemComponentComponent } from './item-component/item-component.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { UploadComponent } from './upload/upload.component';
 
 const appRoutes: Routes = [
   { path: '', component: MainComponent },
@@ -28,7 +29,8 @@ const appRoutes: Routes = [
     MainComponent,
     NavigationComponent,
     ItemComponentComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
