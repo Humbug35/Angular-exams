@@ -15,6 +15,7 @@ import { HandleloadService } from './handleload.service';
 import { ItemComponentComponent } from './item-component/item-component.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { UploadComponent } from './upload/upload.component';
+import { StarComponent } from './star/star.component';
 
 const appRoutes: Routes = [
   { path: '', component: MainComponent },
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
     NavigationComponent,
     ItemComponentComponent,
     BreadcrumbComponent,
-    UploadComponent
+    UploadComponent,
+    StarComponent
   ],
   imports: [
     BrowserModule,

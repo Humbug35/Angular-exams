@@ -16,7 +16,12 @@
         <i *ngIf="!item.name.toLowerCase().endsWith('jpg') && !item.name.toLowerCase().endsWith('png')" class="far fa-file icon-big"></i>
         <img *ngIf="item.thumb_image" [src]=sanitizer(item.thumb_image) class="img-thumbnail">
       </article>
-      <article class="section-listing py-4"><a [routerLink]="item.path_lower">{{ item.name  }}</a></article>
+      <article class="section-listing py-4">
+          <a [routerLink]="item.path_lower">{{ item.name  }}</a>
+          <span class="starred">
+              <app-star [staredItem]="item.id"></app-star>
+          </span> 
+        </article>
       <article class="section-listing py-4" *ngIf="item.size > 0">{{ formatBytes(item.size) }}</article>
       <article class="section-listing py-4" *ngIf="!item.size">---</article>
       <article class="section-listing py-4">{{ item.client_modified }}</article>

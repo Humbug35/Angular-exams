@@ -13,6 +13,7 @@ import { DomSanitizer } from "@angular/platform-browser";
 })
 export class ItemComponentComponent implements OnInit {
 items = [];
+starShow = 'far fa-star';
 constructor( private dataService: DataService, private route: ActivatedRoute, private router: Router, private domSanitizer: DomSanitizer) {}
 
 ngOnInit() {

@@ -12,7 +12,7 @@ section.top-body {
 .set {
   width:58%;
   position:absolute;
-  top:25%;
+  top:24%;
   left:20%;
   z-index:10;
 }
@@ -55,4 +55,13 @@ section.head > article.section-listing-head:last-of-type, section.body-listing >
 span {
   padding:0;
   margin:0;
+}
+.starred {
+  visibility: hidden;
+}
+.body-listing:hover .starred, .body-listing:hover .starred:hover {
+  visibility: visible;
+  color:#007AF5;
+  font-size:16px;
+  margin-left:10px;
 }
