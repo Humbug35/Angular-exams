@@ -5,6 +5,8 @@ import { DataService } from '../data.service';
 import { AuthService } from '../auth.service';
 import {observable} from "rxjs/index";
 import { DomSanitizer } from "@angular/platform-browser";
+import 'moment/locale/pt-br';
+const moment = require('moment');
 
 @Component({
   selector: 'app-item-component',
@@ -24,6 +26,11 @@ ngOnInit() {
       this.items = items;
     });
  }
+
+  getDate(date) {
+    return moment(date).locale('en').format('llll');
+  }
+
  formatBytes(bytes,decimals) {
     if(bytes == 0) return '0 Bytes';
     var k = 1024,
