@@ -56,12 +56,3 @@ span {
   padding:0;
   margin:0;
 }
-.starred {
-  visibility: hidden;
-}
-.body-listing:hover .starred, .body-listing:hover .starred:hover {
-  visibility: visible;
-  color:#007AF5;
-  font-size:16px;
-  margin-left:10px;
-}
