@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from '@angular/common';
 import { DataService } from '../data.service';
-import { AuthService } from '../auth.service';
-import {observable} from "rxjs/index";
 import { DomSanitizer } from "@angular/platform-browser";
 
 @Component({
@@ -13,11 +10,14 @@ import { DomSanitizer } from "@angular/platform-browser";
 })
 export class ItemComponentComponent implements OnInit {
 items = [];
-starShow = 'far fa-star';
-constructor( private dataService: DataService, private route: ActivatedRoute, private router: Router, private domSanitizer: DomSanitizer) {}
+constructor(  private dataService: DataService, 
+              private activatedRoute: ActivatedRoute, 
+              private router: Router, 
+              private domSanitizer: DomSanitizer
+            ) {}
 
 ngOnInit() {
-    this.route.url.subscribe(() => {
+    this.activatedRoute.url.subscribe(() => {
       this.dataService.getItems(decodeURI(this.router.url));
     });
     this.dataService.stream.subscribe((items: any) => {

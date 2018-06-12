@@ -12,11 +12,7 @@ import { Stream } from 'stream';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  
   constructor(private authService: AuthService, private activatedRoute: ActivatedRoute, private router: Router, private handleLoadService: HandleloadService) { }
-
   ngOnInit() {}
-  logout() {
-      this.authService.logout();
-  }
+  
 }

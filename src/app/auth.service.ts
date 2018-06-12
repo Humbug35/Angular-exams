@@ -3,11 +3,7 @@ import { HttpClient, HttpResponse, HttpErrorResponse, HttpHeaders } from '@angul
 
 import { Router } from '@angular/router';
 
-@Injectable({
-  providedIn: 'root'
-})
-
-
+@Injectable({ providedIn: 'root' })
 
 export class AuthService {
   token;
@@ -19,19 +15,8 @@ export class AuthService {
     }
   }
 
-  /*login(userInput) {
-    console.log('Data from authservice', userInput);
-    const ob = this.http.post('/login', userInput);
-    ob.subscribe((item: any) => {
-      this.token = item.token;
-      localStorage.setItem('userLoggedIn', this.token);
-      this.router.navigate(['/home']);
-    });
-    return ob;
-  }*/
-
   logout() {
     this.router.navigate(['/login']);
-    localStorage.clear();
+    localStorage.removeItem(this.token);
   }
 }

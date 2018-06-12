@@ -29,9 +29,7 @@ export class DataService {
   }
 
   getItems(path): Observable<any> {
-    if (path === "/") {
-      path = "";
-    }
+    if (path === "/") { path = ""; }
     const options = {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`

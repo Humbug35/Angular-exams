@@ -3,7 +3,8 @@
     background-color: transparent;
     border-radius: 0;
     color:#222;
-    font-size:20px;
+    font-size:17px;
+    text-transform: capitalize;
 }
 ol.breadcrumb {
     margin:0;
