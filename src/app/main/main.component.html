@@ -2,33 +2,9 @@
 <section class="main-top-menu p-4">
     <article class="flex-row-center">
         <app-breadcrumb></app-breadcrumb>
-        <form class="search form-inline my-2 my-lg-0">
-            <div class="input-group">
-                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-success my-2 my-sm-0 input-group-text" type="submit"><i class="fas fa-search"></i></button>
-                </div>
-            </div>
-        </form>
+        <app-search></app-search>
         <i class="far fa-bell icon-margin alert-animation"></i>
-        <div class="dropleft">
-            <i class="far fa-smile icon-margin dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <div class="flex-column flex-dropleft">
-                    <div class="flex-row-center">
-                        <i class="far fa-smile icon-margin"></i>
-                        <h6 class="dropdown-header">username</h6>
-                    </div>
-                    <div class="dropdown-divider"></div>
-                    <em>4.34 GB of 9 GB used</em>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Settings</a>
-                    <a class="dropdown-item" href="#">Install</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" (click)="logout()">Sign out</a>
-                </div>
-            </div>
-        </div>
+        <app-user></app-user>
     </article>
 </section>
 <app-upload></app-upload>

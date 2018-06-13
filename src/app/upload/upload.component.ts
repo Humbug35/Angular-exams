@@ -11,8 +11,7 @@ export class UploadComponent implements OnInit {
   fileList: FileList;
   constructor(private router: Router, private dataService: DataService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   upLoadFile(event) {
     let results = document.getElementById('file-progress');
@@ -24,7 +23,7 @@ export class UploadComponent implements OnInit {
     results.classList.add('loading');
     results.innerHTML = 'Upload in progress...';
     this.dataService.dbx.filesUpload({ path: urlPath, contents: file })
-      .then((theFile) => {
+      .then(() => {
         this.dataService.getItems(url);
         results.classList.remove('loading');
         results.classList.add('success');
