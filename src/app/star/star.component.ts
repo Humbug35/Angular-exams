@@ -15,21 +15,12 @@ export class StarComponent implements OnInit {
     this.statusOfItem();
   }
   statusOfItem() {
-    if (!localStorage.getItem(this.staredItem)) {
-      return this.stared = false;
-    } else {
-      return this.stared = true;
-    }
+    if (!localStorage.getItem(this.staredItem)) { return this.stared = false; }
+    else { return this.stared = true; }
   }
   changeStatus() {
     this.stared = !this.stared;
-    if (this.stared) {
-      localStorage.setItem(this.staredItem, 'stared');
-      console.error(localStorage.getItem(this.staredItem));
-    }
-    else if (!this.stared) {
-        localStorage.removeItem(this.staredItem);
-    }
-    console.error(localStorage.getItem(this.staredItem));
+    if (this.stared) { localStorage.setItem(this.staredItem, 'stared'); }
+    else { localStorage.removeItem(this.staredItem); }
   }
 }

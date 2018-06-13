@@ -32,6 +32,10 @@ export class LoginComponent implements OnInit {
     const authURL = "https://www.dropbox.com/oauth2/authorize?response_type=token&client_id=nyfmqnlf5r5ndgz&redirect_uri=http://localhost:4200/login";
     return window.location.href = authURL;
   }
+  register() {
+    const regURL = "https://www.dropbox.com";
+    return window.location.href = regURL;
+  }
 
 }
 

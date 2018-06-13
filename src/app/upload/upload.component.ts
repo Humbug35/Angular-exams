@@ -36,7 +36,7 @@ export class UploadComponent implements OnInit {
       .catch((error) => {
         results.classList.remove('loading');
         results.classList.add('fail');
-        results.innerHTML = 'Error, try again.';
+        results.innerHTML = 'Error, try again.' + error;
         setTimeout(() => {
           results.classList.remove('fail');
           results.innerHTML = '';

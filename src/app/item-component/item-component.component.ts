@@ -4,7 +4,6 @@ import { DataService } from '../data.service';
 import { DomSanitizer } from "@angular/platform-browser";
 import 'moment/locale/pt-br';
 const moment = require('moment');
-import { HandleloadService } from '../handleload.service';
 
 
 @Component({
@@ -19,8 +18,7 @@ item: any;
 constructor( private dataService: DataService,
              private activatedRoute: ActivatedRoute,
              private router: Router,
-             private domSanitizer: DomSanitizer,
-             private handleLoad: HandleloadService) {}
+             private domSanitizer: DomSanitizer) {}
 
 ngOnInit() {
     this.activatedRoute.url.subscribe(() => {
@@ -31,9 +29,7 @@ ngOnInit() {
     });
  }
 
-  getDate(date) {
-    return moment(date).locale('en').format('llll');
-  }
+getDate(date) { return moment(date).locale('en').format('llll'); }
 
  formatBytes(bytes,decimals) {
     if(bytes == 0) return '0 Bytes';
@@ -43,17 +39,15 @@ ngOnInit() {
         i = Math.floor(Math.log(bytes) / Math.log(k));
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
  }
- sanitizer(url: string) {
-    return this.domSanitizer.bypassSecurityTrustUrl(url);
- }
+
+ sanitizer(url: string) { return this.domSanitizer.bypassSecurityTrustUrl(url); }
 
  downloadFile(e) {
   this.item = e;
-  console.log('LOG OF E!!!: ', this.item, 'typeof: ', typeof this.item);
   const acceptedFiles = ['jpg', 'png', 'pdf', 'url', 'jpeg', 'txt'];
     for (let i = 0; i < acceptedFiles.length; i++) {
       if (this.item.endsWith(acceptedFiles[i])) {
-        this.handleLoad.downloadFile(e);
+        this.dataService.downloadFile(e);
         break;
       }
     }

@@ -10,7 +10,6 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { DataService } from './data.service';
 import { AuthService } from './auth.service';
 import { FirebaseService } from './firebase.service';
-import { HandleloadService } from './handleload.service';
 import { ItemComponentComponent } from './item-component/item-component.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { UploadComponent } from './upload/upload.component';
@@ -47,7 +46,6 @@ const appRoutes: Routes = [
     DataService,
     AuthService,
     FirebaseService,
-    HandleloadService,
   ],
   bootstrap: [AppComponent]
 })
