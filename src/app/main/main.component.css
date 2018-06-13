@@ -1,0 +1,50 @@
+app-navigation {
+    width:20%;
+    height:100vh;
+    position:fixed;
+    left:0;
+    top:0;
+    border-right:1px solid rgb(207, 207, 207);
+    background:rgb(230, 229, 229);
+}
+app-item-component {
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+app-search {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left:auto;
+}
+.main-top-menu {
+    width:80%;
+    position:fixed;
+    top:0;
+    right:0;
+    z-index:40;
+    box-sizing:border-box;
+    border-bottom:1px solid rgb(207, 207, 207);
+    background:white;
+}
+app-navigation {
+    width:20%;
+    margin-right:50px;
+    border-right:1px solid rgb(207, 207, 207);
+}
+@keyframes swing {
+    20% { transform: rotate3d(0, 0, 1, 20deg); }
+    40% { transform: rotate3d(0, 0, 1, -15deg); }
+    60% { transform: rotate3d(0, 0, 1, 10deg); }
+    80% { transform: rotate3d(0, 0, 1, -10deg); }
+    to { transform: rotate3d(0, 0, 1, 0deg); }
+}
+.alert-animation:hover {
+    transform-origin: top center;
+    animation-name: swing;
+    animation-duration: 4s;
+}

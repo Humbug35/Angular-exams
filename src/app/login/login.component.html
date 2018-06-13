@@ -1,3 +1,6 @@
-<p>
-  login works!
-</p>
+<div class="form-wrapper shadow p-3 mb-5 bg-white rounded border border-light">
+  <img src="assets/img/dropbox-icon.png"/>
+  <p *ngIf="failedLoggedIn">Failed to login, try again!</p>
+  <button (click)="login()" class="btn btn-outline-primary btn-lg btn-block">Sign in with Dropbox</button>
+  <button (click)="register()" class="btn btn-primary btn-block btn-lg">Register</button>
+</div>
