@@ -19,9 +19,9 @@ import { UserComponent } from './user/user.component';
 import { SearchComponent } from './search/search.component';
 
 const appRoutes: Routes = [
-  { path: '', component: MainComponent },
+  { path: '', canActivate: [AuthService], component: MainComponent },
   { path: 'login', component: LoginComponent },
-  { path: '**', component: MainComponent }
+  { path: '**', canActivate: [AuthService], component: MainComponent }
 ];
 
 @NgModule({

@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../data.service';
 import { DomSanitizer } from "@angular/platform-browser";
+import 'moment/locale/pt-br';
+const moment = require('moment');
 import { HandleloadService } from '../handleload.service';
+
 
 @Component({
   selector: 'app-item-component',
@@ -27,6 +30,11 @@ ngOnInit() {
       this.items = items;
     });
  }
+
+  getDate(date) {
+    return moment(date).locale('en').format('llll');
+  }
+
  formatBytes(bytes,decimals) {
     if(bytes == 0) return '0 Bytes';
     var k = 1024,

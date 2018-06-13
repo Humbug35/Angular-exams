@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, CanActivate } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,8 +7,9 @@ import { ActivatedRoute, Router, CanActivate } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
   constructor(private router: Router, private activateRoute: ActivatedRoute) { }
-  
+
   ngOnInit() {
     this.activateRoute.url.subscribe(() => {
       const responsUrl = this.router.url;
@@ -18,7 +19,9 @@ export class LoginComponent implements OnInit {
       const myToken = authToken[1];
 
       localStorage.setItem('token', myToken);
-      console.log('mytoken ', myToken);
+        if (localStorage.getItem('token') === 'The+user+chose+not+to+give+your+app+access+to+their+Dropbox+account.') {
+          localStorage.removeItem('token');
+        }
       this.router.navigate([''])
 
       } else { this.router.navigate(['/login']) }
