@@ -9,8 +9,6 @@ export class HandleloadService {
   fileList: FileList;
   contents: Blob;
 
-
-
 constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }
 
 upLoadFile(event) {
