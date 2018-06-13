@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../data.service';
 import { DomSanitizer } from "@angular/platform-browser";
+import { HandleloadService } from '../handleload.service';
 
 @Component({
   selector: 'app-item-component',
@@ -10,11 +11,13 @@ import { DomSanitizer } from "@angular/platform-browser";
 })
 export class ItemComponentComponent implements OnInit {
 items = [];
-constructor(  private dataService: DataService, 
-              private activatedRoute: ActivatedRoute, 
-              private router: Router, 
-              private domSanitizer: DomSanitizer
-            ) {}
+item: any;
+  
+constructor( private dataService: DataService,
+             private route: ActivatedRoute,
+             private router: Router,
+             private domSanitizer: DomSanitizer,
+             private handleLoad: HandleloadService) {}
 
 ngOnInit() {
     this.activatedRoute.url.subscribe(() => {
@@ -35,4 +38,13 @@ ngOnInit() {
  sanitizer(url: string) {
     return this.domSanitizer.bypassSecurityTrustUrl(url);
  }
+
+ downloadFile(e) {
+  this.item = e;
+  console.log('LOG OF E!!!: ', this.item, 'typeof: ', typeof this.item);
+  if(this.item.endsWith("jpg")) {
+  this.handleLoad.downloadFile(e)
+  }
+ }
+
 }

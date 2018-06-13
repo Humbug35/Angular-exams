@@ -7,7 +7,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HandleloadService {
   fileList: FileList;
-  constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }
+  contents: Blob;
+
+
+
+constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }
 
 upLoadFile(event) {
   let url = this.router.url;
@@ -23,5 +27,10 @@ upLoadFile(event) {
     .catch((error) => {
       console.log('Ops här blev det fel ', error);
     });
+  }
+
+  downloadFile(e) {
+    console.log('Vår download', e);
+    this.dataService.downloadFile(e);
   }
 }
