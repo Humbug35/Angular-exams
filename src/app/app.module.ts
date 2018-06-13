@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule, Routes, ActivatedRoute, CanActivate } from '@angular/router';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { Interceptor } from './interceptor';
+import { RouterModule, Routes, CanActivate } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
@@ -14,6 +13,10 @@ import { FirebaseService } from './firebase.service';
 import { HandleloadService } from './handleload.service';
 import { ItemComponentComponent } from './item-component/item-component.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { UploadComponent } from './upload/upload.component';
+import { StarComponent } from './star/star.component';
+import { UserComponent } from './user/user.component';
+import { SearchComponent } from './search/search.component';
 
 const appRoutes: Routes = [
   { path: '', component: MainComponent },
@@ -28,7 +31,11 @@ const appRoutes: Routes = [
     MainComponent,
     NavigationComponent,
     ItemComponentComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    UploadComponent,
+    StarComponent,
+    UserComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

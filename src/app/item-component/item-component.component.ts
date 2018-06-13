@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from '@angular/common';
 import { DataService } from '../data.service';
-import { AuthService } from '../auth.service';
-import { observable } from "rxjs/index";
 import { DomSanitizer } from "@angular/platform-browser";
 import { HandleloadService } from '../handleload.service';
 
@@ -15,6 +12,7 @@ import { HandleloadService } from '../handleload.service';
 export class ItemComponentComponent implements OnInit {
 items = [];
 item: any;
+  
 constructor( private dataService: DataService,
              private route: ActivatedRoute,
              private router: Router,
@@ -22,7 +20,7 @@ constructor( private dataService: DataService,
              private handleLoad: HandleloadService) {}
 
 ngOnInit() {
-    this.route.url.subscribe(() => {
+    this.activatedRoute.url.subscribe(() => {
       this.dataService.getItems(decodeURI(this.router.url));
     });
     this.dataService.stream.subscribe((items: any) => {
