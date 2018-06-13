@@ -3,6 +3,7 @@ import { HttpClient, HttpResponse, HttpErrorResponse, HttpHeaders } from '@angul
 import { Observable, BehaviorSubject, observable } from 'rxjs';
 import 'isomorphic-fetch';
 import { ActivatedRoute } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Injectable({
@@ -13,8 +14,9 @@ export class DataService {
   stream = null;
   token;
   dbx;
+  fileURL;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private sanitizer: DomSanitizer) {
     if (localStorage.getItem('token')) {
       this.token = localStorage.getItem('token');
     }
@@ -28,10 +30,28 @@ export class DataService {
 
   }
 
+  downloadFile(e) {
+    const path = decodeURI(e);
+    this.dbx.filesDownload({path: path})
+      .then((file) => {
+        console.log('this is our BLOB!',file);
+    const blob = file.fileBlob;
+    this.fileURL = this.sanitizer.bypassSecurityTrustResourceUrl(URL.createObjectURL(blob));
+
+    let a = document.createElement('a');
+    document.body.appendChild(a);
+    a.setAttribute('style', 'display: none');
+    a.href = this.fileURL.changingThisBreaksApplicationSecurity;
+    a.download = file.name;
+    a.click();
+    console.error("url",  this.fileURL);
+      console.log('Vår blob???', this.fileURL.changingThisBreaksApplicationSecurity);
+      });
+
+  }
+
   getItems(path): Observable<any> {
-    if (path === "/") {
-      path = "";
-    }
+    if (path === "/") { path = ""; }
     const options = {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`

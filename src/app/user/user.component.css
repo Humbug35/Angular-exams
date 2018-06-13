@@ -1,0 +1,20 @@
+.dropleft .dropdown-toggle::before {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-right: .255em;
+    vertical-align: 0;
+    content: "";
+    border: 0;
+    border-right: 0;
+    border-bottom: 0;
+}
+.dropleft > .far.fa-smile.icon-margin {
+    margin-left:0;
+}
+.dropdown-item {
+    cursor: pointer;
+}
+.dropdown-menu em {
+    font-size:12px;
+}

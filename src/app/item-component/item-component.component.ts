@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from '@angular/common';
 import { DataService } from '../data.service';
-import { AuthService } from '../auth.service';
-import {observable} from "rxjs/index";
 import { DomSanitizer } from "@angular/platform-browser";
 import 'moment/locale/pt-br';
 const moment = require('moment');
+import { HandleloadService } from '../handleload.service';
+
 
 @Component({
   selector: 'app-item-component',
@@ -15,11 +14,16 @@ const moment = require('moment');
 })
 export class ItemComponentComponent implements OnInit {
 items = [];
-starShow = 'far fa-star';
-constructor( private dataService: DataService, private route: ActivatedRoute, private router: Router, private domSanitizer: DomSanitizer) {}
+item: any;
+  
+constructor( private dataService: DataService,
+             private route: ActivatedRoute,
+             private router: Router,
+             private domSanitizer: DomSanitizer,
+             private handleLoad: HandleloadService) {}
 
 ngOnInit() {
-    this.route.url.subscribe(() => {
+    this.activatedRoute.url.subscribe(() => {
       this.dataService.getItems(decodeURI(this.router.url));
     });
     this.dataService.stream.subscribe((items: any) => {
@@ -42,4 +46,13 @@ ngOnInit() {
  sanitizer(url: string) {
     return this.domSanitizer.bypassSecurityTrustUrl(url);
  }
+
+ downloadFile(e) {
+  this.item = e;
+  console.log('LOG OF E!!!: ', this.item, 'typeof: ', typeof this.item);
+  if(this.item.endsWith("jpg")) {
+  this.handleLoad.downloadFile(e)
+  }
+ }
+
 }

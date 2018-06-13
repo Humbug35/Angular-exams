@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
-import { ActivatedRoute, Router, CanActivate } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +7,8 @@ import { ActivatedRoute, Router, CanActivate } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  constructor(private authService: AuthService, private router: Router, private activateRoute: ActivatedRoute) { }
+
+  constructor(private router: Router, private activateRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.activateRoute.url.subscribe(() => {

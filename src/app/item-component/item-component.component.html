@@ -17,8 +17,9 @@
         <img *ngIf="item.thumb_image" [src]=sanitizer(item.thumb_image) class="img-thumbnail">
       </article>
       <article class="section-listing py-4">
-          <a [routerLink]="item.path_lower">{{ item.name  }}</a> <app-star [staredItem]="item.id"></app-star>
-        </article>
+      <a [routerLink]="item.path_lower" [href]="fileURL" download=" {{ item.name }}" (click)="downloadFile(item.path_lower)">{{ item.name  }}</a>
+      <app-star [staredItem]="item.id"></app-star> 
+      </article>
       <article class="section-listing py-4" *ngIf="item.size > 0">{{ formatBytes(item.size) }}</article>
       <article class="section-listing py-4" *ngIf="!item.size">---</article>
       <article class="section-listing py-4">{{ getDate(item.client_modified) }}</article>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, BehaviorSubject, observable } from 'rxjs';
 import 'isomorphic-fetch';
 import {ActivatedRoute, Data, Router} from '@angular/router';
 

@@ -2,11 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { CanActivate, Router } from '@angular/router';
 
-@Injectable({
-  providedIn: 'root'
-})
-
-
+@Injectable({ providedIn: 'root' })
 
 export class AuthService implements CanActivate {
   token;
