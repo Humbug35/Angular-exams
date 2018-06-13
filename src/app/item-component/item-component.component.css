@@ -4,7 +4,7 @@
 section.top-body {
   width:58%;
   position:fixed;
-  top:87px;
+  top:11.3%;
   left:20%;
   z-index:40;
   background:white;
@@ -12,7 +12,7 @@ section.top-body {
 .set {
   width:58%;
   position:absolute;
-  top:24%;
+  top:21%;
   left:20%;
   z-index:10;
 }

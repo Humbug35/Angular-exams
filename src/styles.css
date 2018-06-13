@@ -1,5 +1,8 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 /* You can add global styles to this file, and also import other style files */
+* {
+  font-size:0.98em;
+}
 app-root {
   width:100%;
   display:flex;
