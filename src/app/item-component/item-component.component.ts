@@ -15,9 +15,9 @@ import { HandleloadService } from '../handleload.service';
 export class ItemComponentComponent implements OnInit {
 items = [];
 item: any;
-  
+
 constructor( private dataService: DataService,
-             private route: ActivatedRoute,
+             private activatedRoute: ActivatedRoute,
              private router: Router,
              private domSanitizer: DomSanitizer,
              private handleLoad: HandleloadService) {}
