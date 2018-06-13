@@ -3,8 +3,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { DataService } from '../data.service';
 import { AuthService } from '../auth.service';
-import {observable} from "rxjs/index";
+import { observable } from "rxjs/index";
 import { DomSanitizer } from "@angular/platform-browser";
+import { HandleloadService } from '../handleload.service';
 
 @Component({
   selector: 'app-item-component',
@@ -13,7 +14,12 @@ import { DomSanitizer } from "@angular/platform-browser";
 })
 export class ItemComponentComponent implements OnInit {
 items = [];
-constructor( private dataService: DataService, private route: ActivatedRoute, private router: Router, private domSanitizer: DomSanitizer) {}
+item: any;
+constructor( private dataService: DataService,
+             private route: ActivatedRoute,
+             private router: Router,
+             private domSanitizer: DomSanitizer,
+             private handleLoad: HandleloadService) {}
 
 ngOnInit() {
     this.route.url.subscribe(() => {
@@ -34,4 +40,13 @@ ngOnInit() {
  sanitizer(url: string) {
     return this.domSanitizer.bypassSecurityTrustUrl(url);
  }
+
+ downloadFile(e) {
+  this.item = e;
+  console.log('LOG OF E!!!: ', this.item, 'typeof: ', typeof this.item);
+  if(this.item.endsWith("jpg")) {
+  this.handleLoad.downloadFile(e)
+  }
+ }
+
 }
