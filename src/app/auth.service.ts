@@ -8,13 +8,21 @@ import { CanActivate, Router } from '@angular/router';
 
 
 
-export class AuthService {
+export class AuthService implements CanActivate {
   token;
 
   constructor(private http: HttpClient, private router: Router) {
     if (localStorage.getItem('token')) {
       this.token = localStorage.getItem('token');
       console.log(this.token);
+    }
+  }
+  canActivate(): boolean{
+    if (localStorage.getItem('token') !== null) {
+      return true;
+    } else {
+      this.router.navigate(['login']);
+      return false;
     }
   }
   logout() {

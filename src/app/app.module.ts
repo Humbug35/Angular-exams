@@ -18,9 +18,9 @@ import { UploadComponent } from './upload/upload.component';
 import { StarComponent } from './star/star.component';
 
 const appRoutes: Routes = [
-  { path: '', component: MainComponent },
+  { path: '', canActivate: [AuthService], component: MainComponent },
   { path: 'login', component: LoginComponent },
-  { path: '**', component: MainComponent }
+  { path: '**', canActivate: [AuthService], component: MainComponent }
 ];
 
 @NgModule({
