@@ -50,9 +50,13 @@ ngOnInit() {
  downloadFile(e) {
   this.item = e;
   console.log('LOG OF E!!!: ', this.item, 'typeof: ', typeof this.item);
-  if(this.item.endsWith("jpg")) {
-  this.handleLoad.downloadFile(e)
-  }
+  const acceptedFiles = ['jpg', 'png', 'pdf', 'url', 'jpeg', 'txt'];
+    for (let i = 0; i < acceptedFiles.length; i++) {
+      if (this.item.endsWith(acceptedFiles[i])) {
+        this.handleLoad.downloadFile(e);
+        break;
+      }
+    }
  }
 
 }
