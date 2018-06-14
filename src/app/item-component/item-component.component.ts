@@ -52,5 +52,4 @@ getDate(date) { return moment(date).locale('en').format('llll'); }
       }
     }
  }
-
 }

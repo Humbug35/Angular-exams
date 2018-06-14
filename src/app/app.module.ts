@@ -16,6 +16,7 @@ import { UploadComponent } from './upload/upload.component';
 import { StarComponent } from './star/star.component';
 import { UserComponent } from './user/user.component';
 import { SearchComponent } from './search/search.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 const appRoutes: Routes = [
   { path: '', canActivate: [AuthService], component: MainComponent },
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     UploadComponent,
     StarComponent,
     UserComponent,
-    SearchComponent
+    SearchComponent,
+    SearchResultComponent
   ],
   imports: [
     BrowserModule,
