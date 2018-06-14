@@ -14,6 +14,13 @@ app-item-component {
     justify-content: flex-start;
     align-items: flex-start;
 }
+app-search-result {
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
 app-search {
     display:flex;
     flex-direction: column;
