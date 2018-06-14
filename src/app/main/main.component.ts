@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../search.service';
 
 @Component({
   selector: 'app-main',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  constructor() { }
+searchkeyWord = '';
+  constructor(private search: SearchService) { 
+    this.search.searchKeyword = this.searchkeyWord;
+  }
   ngOnInit() {}
-  
 }

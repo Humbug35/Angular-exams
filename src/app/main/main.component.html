@@ -2,10 +2,11 @@
 <section class="main-top-menu p-4">
     <article class="flex-row-center">
         <app-breadcrumb></app-breadcrumb>
-        <app-search></app-search>
+        <app-search (onSearch)="keyWord($event)"></app-search>
         <i class="far fa-bell icon-margin alert-animation"></i>
         <app-user></app-user>
     </article>
 </section>
 <app-upload></app-upload>
-<app-item-component></app-item-component>
+<app-search-result *ngIf="searchkeyWord != ''"></app-search-result>
+<app-item-component *ngIf="searchkeyWord === ''"></app-item-component>

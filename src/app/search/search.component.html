@@ -1,9 +1,18 @@
 <form #formsearch="ngForm" class="form-inline my-2 my-lg-0">
     <div class="input-group">
-        <input name="inputWord" [(ngModel)]="searchWord.inputWord" #title="ngModel" class="form-control" type="search" placeholder="Search" aria-label="Search">
+        <input  name="keyWord" 
+                [(ngModel)]="keyWord" 
+                #title="ngModel" 
+                class="form-control" 
+                type="search" 
+                placeholder="Search" 
+                aria-label="Search"
+                (keyup)="startSearch(); submitSearch()">
         <div class="input-group-append">
-            <button class="btn btn-outline-success my-2 my-sm-0 input-group-text" type="submit" (click)="startSearch();  formSearch.reset()"><i class="fas fa-search"></i></button>
+            <button class="btn btn-outline-success my-2 my-sm-0 input-group-text" type="submit" 
+            (click)="startSearch(); submitSearch()">
+                <i class="fas fa-search"></i>
+            </button>
         </div>
     </div>
 </form>
-{{searchWord}}
